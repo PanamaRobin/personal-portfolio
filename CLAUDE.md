@@ -44,8 +44,10 @@ There are no tests, linter, or CI. `typecheck` plus a build is the bar.
 - **Overlays** wrap their content in `components/Overlay.tsx`, which supplies
   the dialog role, backdrop-click and Escape to close, and scroll lock (via
   `useOverlay`). Build new overlays on it.
-- **Edit mode** (`?edit=1`) is client-only: edits live in React state and are
-  lost on reload. Don't present it as persisted.
+- **Edit mode** (`?edit=1`) is out of scope. Jorge decided against an
+  in-page login/editing flow; content is updated by editing `portfolio.ts`
+  directly. Don't build auth, persistence, or a backend for it, and don't
+  extend the edit UI.
 - **Accessibility** — interactive cards and the carousel are keyboard-operable,
   and `prefers-reduced-motion` disables motion. Preserve both.
 - **Responsive** breakpoints are 1080/900/600px. The desktop layout matches
